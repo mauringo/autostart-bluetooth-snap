@@ -1,0 +1,42 @@
+name: bluetooth-autostart
+version: '1.1'
+base: core18
+summary: snap to autostart bluetooth at boot.
+description: |
+    using Ubuntu Core devices it is not always possible to access via SSH and bluez 
+    usually doesn't start up the bluetooth at boot. Sometimes is note event possible 
+    to access the device via SSH. 
+    
+    usage: 
+     1 - install bluez to allow bluetooth usage:
+        "sudo snap install bluez"
+     2 - check dongle compatibility
+        "sudo bluez.hciconfig"
+        the log must show up the HCI devices with their state
+     3 - install bluetooth autosatart 
+        "sudo snap install bluetooth-autostart"
+      
+     basically this app runs the "hcicconfig hci0 up" command
+confinement: strict
+
+apps:
+    
+    autostart-bluetooth:
+        command: bin/run.sh 
+        daemon: simple
+        restart-condition: never
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+
+
+parts:
+    bluez:
+        plugin: nil
+        stage-packages:
+            - bluez
+
+   
+    shscripts:  
+        source: ./shscripts/
+        plugin: dump
+        organize:
+          '*': bin/ 
