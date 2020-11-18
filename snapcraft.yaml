@@ -4,7 +4,7 @@ base: core18
 summary: snap to autostart bluetooth at boot.
 description: |
     using Ubuntu Core devices it is not always possible to access via SSH and bluez 
-    usually doesn't start up the bluetooth at boot. Sometimes is note event possible 
+    usually doesn't start up the bluetooth at boot. Sometimes is note even possible 
     to access the device via SSH. 
     
     usage: 
