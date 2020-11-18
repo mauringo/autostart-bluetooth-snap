@@ -1,4 +1,4 @@
-# Snapp to autostart bluetooth at boot
+# Snap to autostart bluetooth at boot
 
 ## Why?
 Using Ubuntu Core devices it is not always possible to access via SSH. furthermore, bluez usually doesn't start up the bluetooth at boot. In the worst cases is not even possible to access the device via SSH.
@@ -13,7 +13,18 @@ Using Ubuntu Core devices it is not always possible to access via SSH. furthermo
  
 **Enjoy**
 
-basically this app runs the "hcicconfig hci0 up" command
-# Files
+basically this app runs the **"hcicconfig hci0 up"** command
 
-StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
+
+# Build
+
+Follow the commands. you may need multipass support.
+
+
+1 - git clone https://github.com/mauringo/autostart-bluetooth-snap.git
+
+
+2 - cd autosrtart-bluetooth-snap
+
+
+3 - snapcraft
