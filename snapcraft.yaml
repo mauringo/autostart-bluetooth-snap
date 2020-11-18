@@ -15,6 +15,8 @@ description: |
         the log must show up the HCI devices with their state
      3 - install bluetooth autosatart 
         "sudo snap install bluetooth-autostart"
+     4- connect if needed the proper interface:
+        "sudo snap connect bluetooth-autostart:bluetooth-control" 
       
      basically this app runs the "hcicconfig hci0 up" command
 confinement: strict
